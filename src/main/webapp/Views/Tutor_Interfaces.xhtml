@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition template="./../newTemplate.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <div class="titleView">
+                        <h1 style="text-align: center;">Teacher list</h1>
+                    </div>
+                    <div>
+                        <p:dataTable id="dt-tutor"
+                                     var="tutor" 
+                                     value="#{tutorMB.lstTutor}"
+                                     lazy="false">
+                            <p:column headerText="ID">
+                                <h:outputText value="#{tutor.id}" />
+                            </p:column>
+                            <p:column headerText="Name">
+                                <h:outputText value="#{tutor.nombre}" />
+                            </p:column>
+                            <p:column headerText="Last Name">
+                                <h:outputText value="#{tutor.apellido}"/>
+                            </p:column>
+                            <p:column headerText="E-mail">
+                                <h:outputText value="#{tutor.email}" />
+                            </p:column>
+                            <p:column headerText="Cell phone number">
+                                <h:outputText value="#{tutor.telefono}" />
+                            </p:column>
+                            <p:column headerText="User">
+                                <h:outputText value="#{tutor.tipoUser}" />
+                            </p:column>
+                        </p:dataTable>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>
